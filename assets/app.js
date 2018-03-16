@@ -34,6 +34,9 @@ $(document).ready(function() {
 
     let questionArray = [Q1, Q2, Q3, Q4];
     let currentQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
+    let qAnswered = false;
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
     // console.log(currentQuestion);
 
     function questionLoop (argument) {
@@ -46,12 +49,32 @@ $(document).ready(function() {
 
     	$("#aBtn1").on('click', function() {
     		if (questionArray.a1 === questionArray.correct) {
-    			alert("asfdasdfa")
+                correctAnswers++;
+    			//reset time
+                //new question
+                //remove question from array
     		}
+            else if (questionArray.a1 !===questionArray.correct) {
+                wrongAnswers++;
+                //reset time
+                //new question
+                //remove question from array
+
+            }
+
     	});
     }
 
-    questionLoop();
+   window.setTimeout(timeoutLoop, 10000)
+
+   function timeoutLoop() {
+        wrongAnswers++;
+        questionLoop();
+        //reset time
+        //start time again
+
+       
+   }
 
 
 });
