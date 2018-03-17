@@ -1,5 +1,9 @@
+html {
+	font-family: 'Kaushan Script', cursive;
+}
+
 body {
-	background-image: url("./marios.jpg");
+	background-image: url("./map.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
