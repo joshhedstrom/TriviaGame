@@ -245,8 +245,13 @@ $(document).ready(function() {
     let wrongAnswers = 0;
     let startTime;
     let currentQuestion;
-    
+
     $("#start").on('click', function() {
+        $("#gameElement").attr('style', 'display: block;');
+        $("#start").attr('style', 'display: none;');
+        $("html,body").animate({
+            scrollTop: document.body.scrollHeight
+        }, "fast");
         startLoop();
     });
 
@@ -264,11 +269,13 @@ $(document).ready(function() {
     });
 
     let timeSeconds;
+
     function startLoop() {
         let seconds = 0
         timeSeconds = setInterval(timeLeft, 1000)
+
         function timeLeft() {
-            $("#timeLeft").text("You have : " + (10 - seconds) + " seconds left");
+            $("#timeLeft").html("<h4>You have : " + (10 - seconds) + " seconds left</h4>");
             seconds++;
             if (seconds === 11) {
                 wrongAnswers++;
@@ -310,11 +317,11 @@ $(document).ready(function() {
     }
 
     function reset() {
-          if (questionArray == 0) {
+        if (questionArray == 0) {
             clearInterval(timeSeconds);
             alert("You win!!!!")
         } else {
-        startLoop();
+            startLoop();
         }
     }
 

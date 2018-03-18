@@ -18,42 +18,46 @@
 		</header>
 		<main>
 			<div class="container">
-				<div class="row brown white-text" style="opacity: 0.9;">
-					<div class="col s10 offset-s1">
+				<div class="row brown white-text" style="opacity: 0.8;">
+					<div class="col s12 m10 offset-s1">
 						<div id="message">
 							<div class="row">
-								<div class="col s6" id="wins"><h5>Hit start, and you'll have 10 seconds to answer each question!</h5></div>
-								<div class="col s6" id="losses"></div>
+								<h5 class="col s12 m6 left-align" id="wins">Hit start, and you'll have 10 seconds to answer each question!</h5>
+								<h5 class="col s12 m6 right-align" id="losses"></h5>
 							</div>
 						</div>
-						<div><h3 id="question"></h3></div>
-						<button class="btn waves-effect amber darken-3 waves-light" id="start">start
-							</button>
-						<div class="row">
-							<div class="col s10"><h5 id="answer1"></h5></div>
-							<button class="btn amber darken-3 waves-effect waves-light" type="submit" name="action" id="aBtn1">1
-							<i class="material-icons right">send</i>
-							</button>
+						<div><h4 id="question"></h4></div>
+						<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" id="start" style="display: block;">start
+						</button>
+						<div id="gameElement" style="display: none;">
+							<div class="row">
+								<div class="col s12 m10"><h5 id="answer1"></h5></div>
+								<button class="btn amber darken-3 waves-effect waves-light" style="color: black;" type="submit" name="action" id="aBtn1">1
+								<i class="material-icons right">check</i>
+								</button>
+							</div>
+							<div class="row">
+								<div class="col s12 m10"><h5 id="answer2"></h5></div>
+								<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" type="submit" name="action" id="aBtn2">2
+								<i class="material-icons right">check</i>
+								</button>
+							</div>
+							<div class="row">
+								<div class="col s12 m10"><h5 id="answer3"></h5></div>
+								<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" type="submit" name="action" id="aBtn3">3
+								<i class="material-icons right">check</i>
+								</button>
+							</div>
+							<div class="row">
+								<div class="col s12 m10"><h5 id="answer4"></h5></div>
+								<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" type="submit" name="action" id="aBtn4">4
+								<i class="material-icons right">check</i>
+								</button>
+							</div>
+							<div class="row">
+								<div id="timeLeft" class="col s12 black-text center-align"></div>
+							</div>
 						</div>
-						<div class="row">
-							<div class="col s10"><h5 id="answer2"></h5></div>
-							<button class="btn waves-effect amber darken-3 waves-light" type="submit" name="action" id="aBtn2">2
-							<i class="material-icons right">send</i>
-							</button>
-						</div>
-						<div class="row">
-							<div class="col s10"><h5 id="answer3"></h5></div>
-							<button class="btn waves-effect amber darken-3 waves-light" type="submit" name="action" id="aBtn3">3
-							<i class="material-icons right">send</i>
-							</button>
-						</div>
-						<div class="row">
-							<div class="col s10"><h5 id="answer4"></h5></div>
-							<button class="btn waves-effect amber darken-3 waves-light" type="submit" name="action" id="aBtn4">4
-							<i class="material-icons right">send</i>
-							</button>
-						</div>
-						<div id="timeLeft"></div>
 					</div>
 				</div>
 			</div>
