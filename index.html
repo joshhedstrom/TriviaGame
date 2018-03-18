@@ -19,16 +19,19 @@
 		<main>
 			<div class="container">
 				<div class="row brown white-text" style="opacity: 0.8;">
-					<div class="col s12 m10 offset-s1">
-						<div id="message">
+					<div class="col s12">
+						<div>
+							<h5  class="center-align" id="message">Hit start, and you'll have 15 seconds to answer each question! Good Luck!</h5>
 							<div class="row">
-								<h5 class="col s12 m6 left-align" id="wins">Hit start, and you'll have 10 seconds to answer each question!</h5>
+								<h5 class="col s12 m6 left-align" id="wins"></h5>
 								<h5 class="col s12 m6 right-align" id="losses"></h5>
 							</div>
 						</div>
+						<div class="center-align">
+							<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" id="start" style="display: block;">start
+							</button>
+						</div>
 						<div><h4 id="question"></h4></div>
-						<button class="btn waves-effect amber darken-3 waves-light" style="color: black;" id="start" style="display: block;">start
-						</button>
 						<div id="gameElement" style="display: none;">
 							<div class="row">
 								<div class="col s12 m10"><h5 id="answer1"></h5></div>
@@ -66,6 +69,7 @@
 			
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<script src="assets/app.js"></script>
 	</body>
 </html>
