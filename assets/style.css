@@ -3,10 +3,22 @@ html {
 	line-height: 150%;
 }
 
+header {
+	margin-top: -1%;
+}
+
 body {
 	background-image: url("./map.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: cover;
+}
+
+.container {
+	margin-top: -2%;
+}
+
+#tally {
+	margin-top: -2%;
 }
