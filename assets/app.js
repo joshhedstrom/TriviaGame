@@ -19,7 +19,7 @@ $(document).ready(function() {
     let Q9 = new Question("Chile shares the majority of its border with which other South American country?", "Brazil", "Peru", "Argentina", "Columbia", "Argentina");
     let Q10 = new Question("Alkebulan is the oldest indeginous name for which continent?", "South America", "North America", "Africa", "Australia", "Africa");
     let Q11 = new Question("Burkina Faso is a landlocked country located on which continent?", "Asia", "Australia", "Africa", "Europe", "Africa");
-    let Q12 = new Question("What island state was formerly known by the name Formosa?", "Taiwan", "Madagascar", "Macau", "Phillipines", "Taiwan",);
+    let Q12 = new Question("What island state was formerly known by the name Formosa?", "Taiwan", "Madagascar", "Macau", "Phillipines", "Taiwan", );
     let Q13 = new Question("The Principality of Monaco is a sovereign city-state bordered on three sides by which country?", "Italy", "France", "Spain", "Greece", "France");
     let Q14 = new Question("Suriname is a country located on which continent?", "Africa", "North America", "South America", "Europe", "South America");
     let Q15 = new Question("Wellington is the capital city of which island nation?", "Australia", "Scotland", "Wales", "New Zealand", "New Zealand");
@@ -44,6 +44,7 @@ $(document).ready(function() {
     let wrongAnswers = 0;
     let startTime;
     let currentQuestion;
+    let timeSeconds;
 
     $("#start").on('click', function() {
         $("#gameElement").attr('style', 'display: block;');
@@ -53,6 +54,10 @@ $(document).ready(function() {
             scrollTop: document.body.scrollHeight
         }, "fast");
         startLoop();
+    });
+
+    $('.modal').modal({
+        dismissible: false
     });
 
     $("#aBtn1").click(function() {
@@ -67,8 +72,6 @@ $(document).ready(function() {
     $("#aBtn4").click(function() {
         checkAnswer(currentQuestion.four)
     });
-
-    let timeSeconds;
 
     function startLoop() {
         let seconds = 0
@@ -96,19 +99,31 @@ $(document).ready(function() {
         $("#answer4").text(currentQuestion.four)
     }
 
-    function checkAnswer(element) {
-        if (element === currentQuestion.correct) {
+    function checkAnswer(answer) {
+        if (answer === currentQuestion.correct) {
             correctAnswers++;
+            $('#modalRight').modal('open');
+            $('#timeLeft').attr('style', 'display: none;');
             clearInterval(timeSeconds);
-            reset()
             return;
-        } else if (element !== currentQuestion.correct) {
+        } else if (answer !== currentQuestion.correct) {
             wrongAnswers++;
+            $('#rightAnswer').text(currentQuestion.correct);
+            $('#modalWrong').modal('open');
+            $('#timeLeft').attr('style', 'display: none;');
             clearInterval(timeSeconds);
-            reset()
             return;
         }
         return;
+    }
+    $('.modal-close').on('click', function() {
+        restart()
+    });
+
+    function restart() {
+        clearInterval(timeSeconds)
+        reset();
+        $('#timeLeft').attr('style', 'display: block;');
     }
 
     function remove(element) {
@@ -122,10 +137,9 @@ $(document).ready(function() {
             $("#gameElement").attr('style', 'display: none;');
             $("#question").attr('style', 'display: none;');
             $("#message").attr('style', 'display: block;');
-            $("#message").text("You finished! You answered " + correctAnswers + " correctly and " + wrongAnswers + " incorrectly. \n Thanks for playing!")
+            $("#message").html("<h4>You finished! You answered " + correctAnswers + " correctly and " + wrongAnswers + " incorrectly. \n Thanks for playing!</h4>")
         } else {
             startLoop();
         }
     }
-
 });
