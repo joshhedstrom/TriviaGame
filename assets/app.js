@@ -136,6 +136,7 @@ $(document).ready(function() {
             clearInterval(timeSeconds);
             $("#gameElement").attr('style', 'display: none;');
             $("#question").attr('style', 'display: none;');
+            $('#tally').attr('style', 'display: none;');
             $("#message").attr('style', 'display: block;');
             $("#message").html("<h4>You finished! You answered " + correctAnswers + " correctly and " + wrongAnswers + " incorrectly. \n Thanks for playing!</h4>")
         } else {
